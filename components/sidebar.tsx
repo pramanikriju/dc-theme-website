@@ -9,7 +9,7 @@ import { AiFillHome } from "react-icons/ai";
 import { useTheme } from "next-themes";
 
 const SideBar = () => {
-  const { theme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   return (
     <div
@@ -24,7 +24,10 @@ const SideBar = () => {
       <SideBarIcon icon={<BsFillLightningFill size="20" />} />
       <SideBarIcon icon={<FaPoo size="20" />} />
       <Divider />
-      <div className="mt-auto">
+      <div
+        className="mt-auto mb-3"
+        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      >
         <SideBarIcon
           icon={
             theme === "dark" ? (
@@ -41,13 +44,8 @@ const SideBar = () => {
 };
 
 const SideBarIcon = ({ icon, text = "Info 💡", ...props }) => {
-  const { theme, setTheme } = useTheme();
-
   return (
-    <div
-      className="sidebar-icon group"
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-    >
+    <div className="sidebar-icon group">
       {icon}
       <span className="sidebar-tooltip group-hover:scale-100 normal-case">
         {text}
