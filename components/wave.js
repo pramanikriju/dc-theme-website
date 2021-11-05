@@ -2,6 +2,9 @@ import React, { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Helmet } from "react-helmet";
 import * as THREE from "three";
+import { OrbitControls } from "@react-three/drei";
+import resolveConfig from "tailwindcss/resolveConfig";
+import tailwindConfig from "../tailwind.config.js";
 
 const numParticles = 2500;
 
@@ -9,6 +12,8 @@ const Map = (props) => {
   const nodes = useRef([]);
   const scale = useRef([]);
   const waves = useRef();
+
+  const fullConfig = resolveConfig(tailwindConfig);
 
   const { positions, scales } = useMemo(() => {
     const positions = new Float32Array(numParticles * 3);
@@ -23,7 +28,7 @@ const Map = (props) => {
         positions[i + 1] = 0; // y
         positions[i + 2] = iy * 100 - (50 * 100) / 2; // z
 
-        scales[j] = 1;
+        scales[j] = 15;
 
         i += 3;
         j++;
@@ -35,9 +40,9 @@ const Map = (props) => {
   scale.current = scales;
 
   useFrame(({ clock }) => {
-    let positions = waves.current.position;
-    let scales = waves.current.scale;
-
+    const positions = waves.current.geometry.attributes.position.array;
+    const scales = waves.current.geometry.attributes.scale.array;
+    //console.log(waves.current);
     let i = 0,
       j = 0;
 
@@ -47,17 +52,17 @@ const Map = (props) => {
           Math.sin((ix + clock.elapsedTime) * 0.3) * 50 +
           Math.sin((iy + clock.elapsedTime) * 0.5) * 50;
 
-        scales[j] =
-          (Math.sin((ix + clock.elapsedTime) * 0.3) + 1) * 8 +
-          (Math.sin((iy + clock.elapsedTime) * 0.5) + 1) * 8;
+        // scales[j] =
+        //   (Math.sin((ix + clock.elapsedTime) * 0.5) + 1) * 8 +
+        //   (Math.sin((iy + clock.elapsedTime) * 0.5) + 1) * 8;
 
         i += 3;
         j++;
       }
     }
-    waves.current.needsUpdate = true;
-    // waves.current.position.needsUpdate = true;
-    // waves.current.scale.needsUpdate = true;
+    waves.current.geometry.attributes.position.needsUpdate = true;
+    waves.current.geometry.attributes.scale.needsUpdate = true;
+    //console.log(waves.current.__objects);
   });
 
   return (
@@ -81,7 +86,9 @@ const Map = (props) => {
         args={[
           {
             uniforms: {
-              color: { value: new THREE.Color("#6EA6E7") },
+              color: {
+                value: new THREE.Color(fullConfig.theme.colors.blue[500]),
+              },
             },
             vertexShader: document.getElementById("vertexshader").textContent,
             fragmentShader:
@@ -93,7 +100,7 @@ const Map = (props) => {
   );
 };
 
-export default function Wave() {
+export default function App() {
   return (
     <>
       <Helmet>
@@ -106,13 +113,21 @@ export default function Wave() {
         </script>
       </Helmet>
 
-      <Canvas
-        gl
-        camera={{ position: [0, 500, 2000], far: 10000 }}
-        className="absolute bottom-0 left-0"
-      >
-        <Map />
-      </Canvas>
+      <div className="absolute w-full  h-screen">
+        <Canvas
+          gl
+          camera={{ position: [10, 500, 1000], far: 10000, fov: 100 }}
+          //camera={{ fov: 75, near: 1, far: 10000, position: [10, 500, 1000] }}
+        >
+          <Map />
+          <OrbitControls
+            enablePan={false}
+            enableZoom={false}
+            enableRotate={true}
+            //position={[10, 500, 1000]}
+          />
+        </Canvas>
+      </div>
     </>
   );
 }

@@ -23,8 +23,8 @@ export default function Home() {
         <Sidebar />
 
         <div className="flex md:flex-col flex-row items-center justify-center  py-2 w-full relative">
-          <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-            <h1 className="text-6xl font-bold">
+          <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center mb-32">
+            <h1 className="text-6xl font-bold  ">
               I am{" "}
               <a className="text-blue-600 glitch" href="https://nextjs.org">
                 Riju Pramanik
@@ -36,8 +36,8 @@ export default function Home() {
               <span className="p-3 font-mono  rounded-md">Freelancer</span>
             </p>
           </main>
-          <ParticleWave />
-          {/* <Wave /> */}
+          {/* <ParticleWave /> */}
+          <Wave />
         </div>
       </div>
     </>
