@@ -1,12 +1,17 @@
 import React, { useRef, useMemo } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree, Camera } from "@react-three/fiber";
 import { Helmet } from "react-helmet";
 import * as THREE from "three";
 import { OrbitControls } from "@react-three/drei";
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "../tailwind.config.js";
 
-const numParticles = 2500;
+const numParticles = 3500;
+
+function deg2rad(degrees) {
+  var pi = Math.PI;
+  return degrees * (pi / 180);
+}
 
 const Map = (props) => {
   const nodes = useRef([]);
@@ -39,10 +44,14 @@ const Map = (props) => {
   nodes.current = positions;
   scale.current = scales;
 
+  useThree(({ camera }) => {
+    camera.rotation.set(deg2rad(90), 0, 0);
+  });
+
   useFrame(({ clock }) => {
     const positions = waves.current.geometry.attributes.position.array;
     const scales = waves.current.geometry.attributes.scale.array;
-    //console.log(waves.current);
+    console.log(waves);
     let i = 0,
       j = 0;
 
@@ -62,7 +71,7 @@ const Map = (props) => {
     }
     waves.current.geometry.attributes.position.needsUpdate = true;
     waves.current.geometry.attributes.scale.needsUpdate = true;
-    //console.log(waves.current.__objects);
+    waves.current.rotation.y = 0.02 * clock.elapsedTime;
   });
 
   return (
@@ -116,7 +125,12 @@ export default function App() {
       <div className="absolute w-full  h-screen">
         <Canvas
           gl
-          camera={{ position: [10, 500, 1000], far: 10000, fov: 100 }}
+          camera={{
+            position: [400, 500, 1000],
+            far: 10000,
+            fov: 100,
+            rotateY: 400,
+          }}
           //camera={{ fov: 75, near: 1, far: 10000, position: [10, 500, 1000] }}
         >
           <Map />
@@ -124,6 +138,10 @@ export default function App() {
             enablePan={false}
             enableZoom={false}
             enableRotate={true}
+            maxAzimuthAngle={Math.PI / 4}
+            maxPolarAngle={Math.PI / 2}
+            minAzimuthAngle={Math.PI * 4}
+            minPolarAngle={0}
             //position={[10, 500, 1000]}
           />
         </Canvas>
