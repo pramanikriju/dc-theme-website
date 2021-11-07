@@ -2,7 +2,7 @@ import React, { useRef, useMemo, useEffect } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Helmet } from "react-helmet";
 import * as THREE from "three";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "../tailwind.config.js";
 import { useTheme } from "next-themes";
@@ -33,7 +33,7 @@ const Map = (props) => {
         positions[i + 1] = 0; // y
         positions[i + 2] = iy * 100 - (50 * 100) / 2; // z
 
-        scales[j] = theme == "light" ? 30 : 20;
+        scales[j] = theme == "light" ? 30 : 25;
 
         i += 3;
         j++;
@@ -69,9 +69,14 @@ const Map = (props) => {
     waves.current.geometry.attributes.scale.needsUpdate = true;
 
     //Slowly rotate waves
-    waves.current.rotation.y = 0.02 * clock.elapsedTime;
-    camera.updateProjectionMatrix();
+    //waves.current.rotation.y = 0.02 * clock.elapsedTime;
   });
+
+  const camera = useThree((state) => state.camera);
+  useEffect(() => {
+    camera.rotation.set(0, 100, 0);
+    camera.updateProjectionMatrix();
+  }, []);
 
   return (
     <points {...props} ref={waves}>
@@ -123,20 +128,30 @@ export default function App() {
 
       <div className="absolute w-full  h-screen">
         <Canvas
+          //frameloop="demand"
           gl
-          camera={{
-            position: [400, 800, 2000],
-            far: 10000,
-            fov: 50,
-            rotateY: Math.PI / 4,
-          }}
-          //camera={{ fov: 75, near: 1, far: 10000, position: [10, 500, 1000] }}
+          // camera={{
+          //   position: [400, 800, 2000],
+          //   far: 10000,
+          //   fov: 50,
+          //   rotateY: Math.PI / 4,
+          // }}
         >
           <Map />
+          <PerspectiveCamera
+            position={[400, 800, 2000]}
+            fov={50}
+            far={12000}
+            makeDefault
+          />
           <OrbitControls
             enablePan={false}
             enableZoom={false}
             enableRotate={true}
+            autoRotate={true}
+            autoRotateSpeed={0.1}
+            enableDamping={true}
+            target={[0, 650, 0]}
             //maxAzimuthAngle={Math.PI / 4}
             maxPolarAngle={Math.PI / 2}
             //minAzimuthAngle={Math.PI * 4}

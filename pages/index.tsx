@@ -23,7 +23,7 @@ export default function Home() {
         {/* <Sidebar /> */}
 
         <div className="flex md:flex-col flex-row items-center justify-center  py-2 w-full h-full min-h-screen relative">
-          <main className="flex flex-col items-center justify-center  flex-1 text-center mb-42 main-font">
+          <main className="flex flex-col items-center justify-center  flex-1 text-center mb-46 main-font">
             <h1 className="text-7xl font-bold  z-50">
               I am{" "}
               <a className="text-blue-600 " href="https://nextjs.org">
