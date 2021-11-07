@@ -20,18 +20,18 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="flex ">
-        <Sidebar />
+        {/* <Sidebar /> */}
 
-        <div className="flex md:flex-col flex-row items-center justify-center  py-2 w-full relative">
-          <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center mb-32">
-            <h1 className="text-6xl font-bold  ">
+        <div className="flex md:flex-col flex-row items-center justify-center  py-2 w-full h-full min-h-screen relative">
+          <main className="flex flex-col items-center justify-center  flex-1 text-center mb-42 main-font">
+            <h1 className="text-7xl font-bold  z-50">
               I am{" "}
-              <a className="text-blue-600 glitch" href="https://nextjs.org">
+              <a className="text-blue-600 " href="https://nextjs.org">
                 Riju Pramanik
               </a>
             </h1>
 
-            <p className="mt-3 text-2xl">
+            <p className="mt-3 text-3xl font-bold z-50">
               Web Developer @
               <span className="p-3 font-mono  rounded-md">Freelancer</span>
             </p>

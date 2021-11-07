@@ -1,19 +1,19 @@
-import React, { useRef, useMemo } from "react";
-import { Canvas, useFrame, useThree, Camera } from "@react-three/fiber";
+import React, { useRef, useMemo, useEffect } from "react";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Helmet } from "react-helmet";
 import * as THREE from "three";
 import { OrbitControls } from "@react-three/drei";
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "../tailwind.config.js";
+import { useTheme } from "next-themes";
 
 const numParticles = 3500;
 
-function deg2rad(degrees) {
-  var pi = Math.PI;
-  return degrees * (pi / 180);
-}
+const deg2rad = (degrees) => degrees * (Math.PI / 180);
 
 const Map = (props) => {
+  const { theme } = useTheme();
+
   const nodes = useRef([]);
   const scale = useRef([]);
   const waves = useRef();
@@ -33,7 +33,7 @@ const Map = (props) => {
         positions[i + 1] = 0; // y
         positions[i + 2] = iy * 100 - (50 * 100) / 2; // z
 
-        scales[j] = 15;
+        scales[j] = theme == "light" ? 30 : 20;
 
         i += 3;
         j++;
@@ -44,14 +44,10 @@ const Map = (props) => {
   nodes.current = positions;
   scale.current = scales;
 
-  useThree(({ camera }) => {
-    camera.rotation.set(deg2rad(90), 0, 0);
-  });
-
-  useFrame(({ clock }) => {
+  useFrame(({ clock, camera }) => {
     const positions = waves.current.geometry.attributes.position.array;
     const scales = waves.current.geometry.attributes.scale.array;
-    console.log(waves);
+    //console.log(waves);
     let i = 0,
       j = 0;
 
@@ -71,7 +67,10 @@ const Map = (props) => {
     }
     waves.current.geometry.attributes.position.needsUpdate = true;
     waves.current.geometry.attributes.scale.needsUpdate = true;
+
+    //Slowly rotate waves
     waves.current.rotation.y = 0.02 * clock.elapsedTime;
+    camera.updateProjectionMatrix();
   });
 
   return (
@@ -126,10 +125,10 @@ export default function App() {
         <Canvas
           gl
           camera={{
-            position: [400, 500, 1000],
+            position: [400, 800, 2000],
             far: 10000,
-            fov: 100,
-            rotateY: 400,
+            fov: 50,
+            rotateY: Math.PI / 4,
           }}
           //camera={{ fov: 75, near: 1, far: 10000, position: [10, 500, 1000] }}
         >
@@ -138,10 +137,10 @@ export default function App() {
             enablePan={false}
             enableZoom={false}
             enableRotate={true}
-            maxAzimuthAngle={Math.PI / 4}
+            //maxAzimuthAngle={Math.PI / 4}
             maxPolarAngle={Math.PI / 2}
-            minAzimuthAngle={Math.PI * 4}
-            minPolarAngle={0}
+            //minAzimuthAngle={Math.PI * 4}
+            //minPolarAngle={0}
             //position={[10, 500, 1000]}
           />
         </Canvas>
