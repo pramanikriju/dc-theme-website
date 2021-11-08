@@ -1,11 +1,17 @@
 import "../styles/globals.css";
 import { ThemeProvider } from "next-themes";
+import Head from "next/head";
 
 function App({ Component, pageProps }) {
   return (
-    <ThemeProvider attribute="class">
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <>
+      <Head>
+        <title>Riju Pramanik | Web Developer</title>
+      </Head>
+      <ThemeProvider attribute="class">
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </>
   );
 }
 export default App;

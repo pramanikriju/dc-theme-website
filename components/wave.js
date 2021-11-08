@@ -33,7 +33,7 @@ const Map = (props) => {
         positions[i + 1] = 0; // y
         positions[i + 2] = iy * 100 - (50 * 100) / 2; // z
 
-        scales[j] = theme == "light" ? 30 : 25;
+        scales[j] = theme === "light" ? 40 : 30;
 
         i += 3;
         j++;
@@ -44,10 +44,9 @@ const Map = (props) => {
   nodes.current = positions;
   scale.current = scales;
 
-  useFrame(({ clock, camera }) => {
+  useFrame(({ clock }) => {
     const positions = waves.current.geometry.attributes.position.array;
     const scales = waves.current.geometry.attributes.scale.array;
-    //console.log(waves);
     let i = 0,
       j = 0;
 
