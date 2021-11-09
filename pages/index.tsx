@@ -52,27 +52,78 @@ export default function Home() {
             className="grid grid-cols-2  " //min-h-screen place-items-center
             data-scroll-section
             data-scroll
+            id="myarea1"
+          >
+            <div
+              className="text-center h-64"
+              data-scroll
+              data-scroll-sticky
+              data-scroll-target="#myarea1"
+            >
+              <div
+                className="mt-64"
+                data-scroll
+                data-scroll-delay="0.08"
+                data-scroll-speed="1"
+              >
+                <h1>Hey</h1>
+                <h2>I'm RIju.</h2>
+                <p>👋</p>
+              </div>
+              <div
+                className="mt-10"
+                data-scroll
+                data-scroll-delay="0.9"
+                data-scroll-speed="1"
+                data-scroll-offset="10%"
+              >
+                <p>A digital experience Developer</p>
+              </div>
+            </div>
+            <div data-scroll>
+              <img src="https://source.unsplash.com/featured?portrait" alt="" />
+            </div>
+          </div>
+          <div
+            className="grid grid-cols-2  " //min-h-screen place-items-center
+            data-scroll-section
+            data-scroll
             id="myarea"
           >
+            <div data-scroll>
+              <img src="https://source.unsplash.com/featured?space" alt="" />
+              <img src="https://source.unsplash.com/featured?nature" alt="" />
+              <img src="https://source.unsplash.com/featured?ocean" alt="" />
+              <img src="https://source.unsplash.com/featured?places" alt="" />
+              <img src="https://source.unsplash.com/featured?pattern" alt="" />
+              <img src="https://source.unsplash.com/featured?people" alt="" />
+              <img src="https://source.unsplash.com/featured" alt="" />
+            </div>
             <div
               className="text-center h-64"
               data-scroll
               data-scroll-sticky
               data-scroll-target="#myarea"
             >
-              <h1>Hey</h1>
-              <h2>Test 2</h2>
-              <p>👋</p>
-            </div>
-            <div data-scroll>
-              <img src="https://source.unsplash.com/featured" alt="" />
-              <img src="https://source.unsplash.com/featured?space" alt="" />
-              <img src="https://source.unsplash.com/featured?nature" alt="" />
-              <img src="https://source.unsplash.com/featured?ocean" alt="" />
-              <img src="https://source.unsplash.com/featured?tech" alt="" />
-
-              <img src="https://source.unsplash.com/featured?pattern" alt="" />
-              <img src="https://source.unsplash.com/featured?people" alt="" />
+              <div
+                className="mt-64"
+                data-scroll
+                data-scroll-delay="0.08"
+                data-scroll-speed="1"
+              >
+                <h1>Hey</h1>
+                <h2>I'm RIju.</h2>
+                <p>👋</p>
+              </div>
+              <div
+                className="mt-10"
+                data-scroll
+                data-scroll-delay="0.9"
+                data-scroll-speed="1"
+                //data-scroll-offset="100%"
+              >
+                <p>A digital experience Developer</p>
+              </div>
             </div>
           </div>
         </main>
