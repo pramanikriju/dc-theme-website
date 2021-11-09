@@ -27,6 +27,10 @@
   }
 }
 
+body {
+  font-family: "Fira Sans", sans-serif;
+}
+
 .main-font {
   font-family: "Proza Libre", sans-serif;
 }

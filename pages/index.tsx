@@ -34,9 +34,10 @@ export default function Home() {
             {/* <Sidebar /> */}
 
             <div className="flex  items-center justify-center  py-2 w-full h-full min-h-screen relative">
-              <main className="flex flex-col items-center justify-center  flex-1 text-center mb-46 main-font">
+              <main className="flex flex-col items-center justify-center  flex-1 text-center mb-46 ">
                 <h1 className="text-5xl md:text-7xl font-bold  z-50">
-                  I am <span className="text-blue-600 ">Riju Pramanik</span>
+                  I am{" "}
+                  <span className="text-blue-600 main-font">Riju Pramanik</span>
                 </h1>
 
                 <p className="mt-3 text-3xl font-bold z-50">
@@ -68,7 +69,11 @@ export default function Home() {
               >
                 <h1>Hey</h1>
                 <h2>I'm RIju.</h2>
-                <p>👋</p>
+                <p>
+                  Hi, I'm Riju Pramanik, a full stack developer and designer
+                  based out of India. I help design and curate rich digital
+                  experiences, both online and on mobile devices.
+                </p>
               </div>
               <div
                 className="mt-10"
