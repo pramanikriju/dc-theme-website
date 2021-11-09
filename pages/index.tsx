@@ -49,12 +49,13 @@ export default function Home() {
             </div>
           </div>
           <div
-            className="grid grid-cols-2 min-h-screen  "
+            className="grid grid-cols-2  " //min-h-screen place-items-center
             data-scroll-section
+            data-scroll
             id="myarea"
           >
             <div
-              className="text-center min-h-screen"
+              className="text-center h-64"
               data-scroll
               data-scroll-sticky
               data-scroll-target="#myarea"
@@ -63,11 +64,15 @@ export default function Home() {
               <h2>Test 2</h2>
               <p>👋</p>
             </div>
-            <div>
+            <div data-scroll>
               <img src="https://source.unsplash.com/featured" alt="" />
               <img src="https://source.unsplash.com/featured?space" alt="" />
               <img src="https://source.unsplash.com/featured?nature" alt="" />
               <img src="https://source.unsplash.com/featured?ocean" alt="" />
+              <img src="https://source.unsplash.com/featured?tech" alt="" />
+
+              <img src="https://source.unsplash.com/featured?pattern" alt="" />
+              <img src="https://source.unsplash.com/featured?people" alt="" />
             </div>
           </div>
         </main>
