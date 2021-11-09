@@ -2780,6 +2780,11 @@ troika-worker-utils@^0.43.0:
   resolved "https://registry.yarnpkg.com/troika-worker-utils/-/troika-worker-utils-0.43.0.tgz#f24bbf3d7d25f87f72150b37bf35fa105f7160bd"
   integrity sha512-8YXWwfviJ1N/9+nuE5dT9RFttmDsIF8CP7d6rRsBBhH55il3fBqpFSuzTlOcdgC1yq8Hmhi6GgIl6eK4Zt+hTw==
 
+tslib@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
+  integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
+
 tty-browserify@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/tty-browserify/-/tty-browserify-0.0.1.tgz#3f05251ee17904dfd0677546670db9651682b811"
