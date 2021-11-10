@@ -6,6 +6,8 @@ const Wave = dynamic(() => import("../components/wave"), {
 });
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import { useRouter } from "next/router";
+import Image from "next/image";
+import profilePic from "../public/assets/img/me.png";
 
 export default function Home() {
   const containerRef = useRef(null);
@@ -86,7 +88,7 @@ export default function Home() {
               </div>
             </div>
             <div data-scroll>
-              <img src="https://source.unsplash.com/featured?portrait" alt="" />
+              <Image src={profilePic} alt="" layout="responsive" />
             </div>
           </div>
           <div

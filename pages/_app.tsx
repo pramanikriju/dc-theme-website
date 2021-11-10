@@ -9,7 +9,7 @@ function App({ Component, pageProps }) {
       <Head>
         <title>Riju Pramanik | Web Developer</title>
       </Head>
-      <ThemeProvider attribute="class">
+      <ThemeProvider defaultTheme="dark" attribute="class">
         <Component {...pageProps} />
       </ThemeProvider>
     </>
