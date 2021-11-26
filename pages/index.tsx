@@ -9,6 +9,8 @@ import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import profilePic from "../public/assets/img/me.png";
+import clientsData from "../assets/clientData";
+import Client from "../components/client";
 
 export default function Home() {
   const containerRef = useRef(null);
@@ -98,48 +100,13 @@ export default function Home() {
               <Image src={profilePic} alt="" layout="responsive" />
             </div>
           </div>
-          <div
-            className="grid grid-cols-2  " //min-h-screen place-items-center
-            data-scroll-section
-            data-scroll
-            id="myarea"
-          >
-            <div data-scroll>
-              <img src="https://source.unsplash.com/featured?space" alt="" />
-              <img src="https://source.unsplash.com/featured?nature" alt="" />
-              <img src="https://source.unsplash.com/featured?ocean" alt="" />
-              <img src="https://source.unsplash.com/featured?places" alt="" />
-              <img src="https://source.unsplash.com/featured?pattern" alt="" />
-              <img src="https://source.unsplash.com/featured?people" alt="" />
-              <img src="https://source.unsplash.com/featured" alt="" />
-            </div>
-            <div
-              className="text-center h-64"
-              data-scroll
-              data-scroll-sticky
-              data-scroll-target="#myarea"
-            >
-              <div
-                className="mt-64"
-                data-scroll
-                data-scroll-delay="0.08"
-                data-scroll-speed="1"
-              >
-                <h1>Hey</h1>
-                <h2>I'm RIju.</h2>
-                <p>👋</p>
-              </div>
-              <div
-                className="mt-10"
-                data-scroll
-                data-scroll-delay="0.9"
-                data-scroll-speed="1"
-                //data-scroll-offset="100%"
-              >
-                <p>A digital experience Developer</p>
-              </div>
-            </div>
-          </div>
+          {clientsData.map((item, i) => (
+            <Client
+              key={item.id}
+              client={item}
+              flip={i % 2 === 0 ? true : false}
+            />
+          ))}
         </main>
       </LocomotiveScrollProvider>
     </>
