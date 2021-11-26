@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import { useRef, useEffect } from "react";
 import Navbar from "../components/navbar";
+import { FiChevronsDown } from "react-icons/fi";
 const Wave = dynamic(() => import("../components/wave"), {
   ssr: false,
 });
@@ -49,44 +50,50 @@ export default function Home() {
               </main>
               {/* <ParticleWave /> */}
               <Wave />
+              <p className="absolute bottom-12  animate-bounce border-2 border-blue-600 hover:bor rounded-full p-1  bg-white text-black">
+                <FiChevronsDown className="text-4xl my-1" />
+              </p>
             </div>
           </div>
           <div
-            className="grid grid-cols-2  " //min-h-screen place-items-center
+            className="grid grid-cols-1 md:grid-cols-2  " //min-h-screen place-items-center
             data-scroll-section
             data-scroll
             id="myarea1"
           >
-            <div
-              className="text-center h-64"
-              data-scroll
-              data-scroll-sticky
-              data-scroll-target="#myarea1"
-            >
+            <div className="flex justify-center text-center">
               <div
-                className="mt-64"
+                className=""
                 data-scroll
-                data-scroll-delay="0.08"
-                data-scroll-speed="1"
+                data-scroll-sticky
+                data-scroll-target="#myarea1"
               >
-                <h1>Hey</h1>
-                <h2>I'm RIju.</h2>
-                <p>
-                  Hi, I'm Riju Pramanik, a full stack developer and designer
-                  based out of India. I help design and curate rich digital
-                  experiences, both online and on mobile devices.
-                </p>
-              </div>
-              <div
-                className="mt-10"
-                data-scroll
-                data-scroll-delay="0.9"
-                data-scroll-speed="1"
-                data-scroll-offset="10%"
-              >
-                <p>A digital experience Developer</p>
+                <div
+                  className="mt-64 "
+                  data-scroll
+                  data-scroll-delay="0.08"
+                  data-scroll-speed="1"
+                >
+                  <h1>Hey</h1>
+                  <h2>I'm RIju.</h2>
+                  <p>
+                    Hi, I'm Riju Pramanik, a full stack developer and designer
+                    based out of India. I help design and curate rich digital
+                    experiences, both online and on mobile devices.
+                  </p>
+                </div>
+                <div
+                  className="mt-10"
+                  data-scroll
+                  data-scroll-delay="0.9"
+                  data-scroll-speed="1"
+                  data-scroll-offset="20%"
+                >
+                  <p>A digital experience Developer</p>
+                </div>
               </div>
             </div>
+
             <div data-scroll>
               <Image src={profilePic} alt="" layout="responsive" />
             </div>
