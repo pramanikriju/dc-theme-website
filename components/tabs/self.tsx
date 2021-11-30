@@ -7,46 +7,7 @@ function Self() {
   const { data } = useSWR("/api/spotify", fetcher);
 
   return (
-    <div className="mt-3">
-      <div className="flex items-center px-6   bg-gray-900">
-        <svg
-          className="w-6 h-6 text-white fill-current"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M17 21C15.8954 21 15 20.1046 15 19V15C15 13.8954 15.8954 13 17 13H19V12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12V13H7C8.10457 13 9 13.8954 9 15V19C9 20.1046 8.10457 21 7 21H3V12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12V21H17ZM19 15H17V19H19V15ZM7 15H5V19H7V15Z"
-          />
-        </svg>
-
-        <h1 className="mx-3 text-lg   text-white w-full truncate">
-          <span className="font-semibold">Currently listening to - </span>
-          {data?.isPlaying ? (
-            <img
-              className="w-14  ml-2 mr-4 inline border-1 border-white "
-              src={data?.albumImageUrl}
-              alt={data?.album}
-            />
-          ) : (
-            <SiSpotify
-              size={32}
-              color={"#1ED760"}
-              className="inline h-14 ml-3 "
-            />
-          )}
-          <span className="">
-            {data?.isPlaying ? (
-              `${data.title} by ${data.artist}`
-            ) : (
-              <span className="ml-3"> N/A </span>
-            )}
-          </span>
-        </h1>
-      </div>
-
+    <div className="mt-1">
       <div className="px-6 py-4 pt-6">
         <h1 className="text-3xl main-font font-bold text-gray-800 dark:text-white">
           Riju Pramanik
@@ -72,7 +33,7 @@ function Self() {
             />
           </svg>
 
-          <h1 className="px-2 text-sm">Freelancer</h1>
+          <h1 className="px-2 text-md">Freelancer</h1>
         </div>
 
         <div className="flex items-center mt-4 text-gray-700 dark:text-gray-200">
@@ -94,7 +55,7 @@ function Self() {
             />
           </svg>
 
-          <h1 className="px-2 text-sm">India</h1>
+          <h1 className="px-2 text-md">India</h1>
         </div>
 
         <div className="flex items-center mt-4 text-gray-700 dark:text-gray-200">
@@ -111,8 +72,38 @@ function Self() {
             />
           </svg>
 
-          <h1 className="px-2 text-sm">patterson@example.com</h1>
+          <h1 className="px-2 text-md">patterson@example.com</h1>
         </div>
+      </div>
+      <div className="flex mt-3 items-center px-6   bg-gray-900">
+        {/* <svg
+          className="w-6 h-6 text-white fill-current"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M17 21C15.8954 21 15 20.1046 15 19V15C15 13.8954 15.8954 13 17 13H19V12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12V13H7C8.10457 13 9 13.8954 9 15V19C9 20.1046 8.10457 21 7 21H3V12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12V21H17ZM19 15H17V19H19V15ZM7 15H5V19H7V15Z"
+          />
+        </svg> */}
+        <SiSpotify size={32} className="inline h-18 " />
+
+        <div className="mx-4 text-lg my-auto   text-white w-full md:truncate">
+          <span className=" font-semibold">
+            {data?.isPlaying ? "Currently listening to" : "Last listened to"} -{" "}
+          </span>
+
+          <span className="h-full italic main-font">
+            {`${data?.title} by ${data?.artist}`}
+          </span>
+        </div>
+        <img
+          className="w-16  ml-2 mr-4 inline border-1 border-white float-right "
+          src={data?.albumImageUrl}
+          alt={data?.album}
+        />
       </div>
     </div>
   );

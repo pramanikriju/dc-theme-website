@@ -56,15 +56,9 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div
-            className="py-16  " //min-h-screen place-items-center
-            data-scroll-section
-            data-scroll
-            id="myarea1"
-          >
-            <div className="flex flex-col" data-scroll>
-              <Profile />
-            </div>
+
+          <div className="flex flex-col min-h-screen " data-scroll-section>
+            <Profile />
           </div>
           {/* {clientsData.map((item, i) => (
             <Client
