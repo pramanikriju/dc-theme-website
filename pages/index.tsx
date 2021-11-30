@@ -7,10 +7,9 @@ const Wave = dynamic(() => import("../components/wave"), {
 });
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import { useRouter } from "next/router";
-import Image from "next/image";
-import profilePic from "../public/assets/img/me.png";
 import clientsData from "../assets/clientData";
 import Client from "../components/client";
+import Profile from "../components/profile";
 
 export default function Home() {
   const containerRef = useRef(null);
@@ -58,55 +57,22 @@ export default function Home() {
             </div>
           </div>
           <div
-            className="grid grid-cols-1 md:grid-cols-2  " //min-h-screen place-items-center
+            className="py-16  " //min-h-screen place-items-center
             data-scroll-section
             data-scroll
             id="myarea1"
           >
-            <div className="flex justify-center text-center">
-              <div
-                className=""
-                data-scroll
-                data-scroll-sticky
-                data-scroll-target="#myarea1"
-              >
-                <div
-                  className="mt-64 "
-                  data-scroll
-                  data-scroll-delay="0.08"
-                  data-scroll-speed="1"
-                >
-                  <h1>Hey</h1>
-                  <h2>I'm RIju.</h2>
-                  <p>
-                    Hi, I'm Riju Pramanik, a full stack developer and designer
-                    based out of India. I help design and curate rich digital
-                    experiences, both online and on mobile devices.
-                  </p>
-                </div>
-                <div
-                  className="mt-10"
-                  data-scroll
-                  data-scroll-delay="0.9"
-                  data-scroll-speed="1"
-                  data-scroll-offset="20%"
-                >
-                  <p>A digital experience Developer</p>
-                </div>
-              </div>
-            </div>
-
-            <div data-scroll>
-              <Image src={profilePic} alt="" layout="responsive" />
+            <div className="flex flex-col" data-scroll>
+              <Profile />
             </div>
           </div>
-          {clientsData.map((item, i) => (
+          {/* {clientsData.map((item, i) => (
             <Client
               key={item.id}
               client={item}
               flip={i % 2 === 0 ? true : false}
             />
-          ))}
+          ))} */}
         </main>
       </LocomotiveScrollProvider>
     </>
