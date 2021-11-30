@@ -3,6 +3,7 @@ import { Tab } from "@headlessui/react";
 import profilePic from "../public/assets/img/me.png";
 import Image from "next/image";
 import Self from "./tabs/self";
+import WorkHistory from "./tabs/WorkHistory";
 
 const tabsList = ["About", "Work", "Links"];
 
@@ -26,8 +27,8 @@ function Profile() {
                   <button
                     className={
                       selected
-                        ? "transition-all   w-full py-2.5 text-sm leading-5 font-medium text-blue-700 rounded-lg focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 bg-white shadow"
-                        : "transition-all w-full py-2.5 text-sm leading-5 font-medium text-white rounded-lg focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60  hover:bg-white/[0.12] hover:text-white"
+                        ? "transition-all   w-full py-2.5 text-md leading-5 font-medium text-blue-700 rounded-lg focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 bg-white shadow"
+                        : "transition-all border-1 border-white w-full py-2.5 text-md leading-5 font-medium text-white rounded-lg focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60  hover:bg-white/[0.12] hover:text-white"
                     }
                   >
                     {item}
@@ -40,7 +41,9 @@ function Profile() {
             <Tab.Panel>
               <Self />
             </Tab.Panel>
-            <Tab.Panel>Content 2</Tab.Panel>
+            <Tab.Panel>
+              <WorkHistory />
+            </Tab.Panel>
             <Tab.Panel>Content 3</Tab.Panel>
           </Tab.Panels>
         </Tab.Group>

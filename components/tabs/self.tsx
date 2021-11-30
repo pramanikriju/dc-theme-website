@@ -26,7 +26,7 @@ function Self() {
           <span className="font-semibold">Currently listening to - </span>
           {data?.isPlaying ? (
             <img
-              className="w-14 mx-4 inline border-1 border-white "
+              className="w-14  ml-2 mr-4 inline border-1 border-white "
               src={data?.albumImageUrl}
               alt={data?.album}
             />
@@ -34,17 +34,21 @@ function Self() {
             <SiSpotify
               size={32}
               color={"#1ED760"}
-              className="inline h-14 none"
+              className="inline h-14 ml-3 "
             />
           )}
           <span className="">
-            {data?.isPlaying ? `${data.title} by ${data.artist} ` : " N/A"}
+            {data?.isPlaying ? (
+              `${data.title} by ${data.artist} `
+            ) : (
+              <span className="ml-3"> N/A </span>
+            )}
           </span>
         </h1>
       </div>
 
       <div className="px-6 py-4 pt-6">
-        <h1 className="text-2xl main-font font-semibold text-gray-800 dark:text-white">
+        <h1 className="text-3xl main-font font-bold text-gray-800 dark:text-white">
           Riju Pramanik
         </h1>
 
