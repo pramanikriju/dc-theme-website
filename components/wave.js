@@ -9,8 +9,6 @@ import { useTheme } from "next-themes";
 
 const numParticles = 3500;
 
-const deg2rad = (degrees) => degrees * (Math.PI / 180);
-
 const Map = (props) => {
   const { theme } = useTheme();
 
@@ -46,7 +44,7 @@ const Map = (props) => {
 
   useFrame(({ clock }) => {
     const positions = waves.current.geometry.attributes.position.array;
-    const scales = waves.current.geometry.attributes.scale.array;
+    //const scales = waves.current.geometry.attributes.scale.array;
     let i = 0,
       j = 0;
 
@@ -65,17 +63,17 @@ const Map = (props) => {
       }
     }
     waves.current.geometry.attributes.position.needsUpdate = true;
-    waves.current.geometry.attributes.scale.needsUpdate = true;
+    //waves.current.geometry.attributes.scale.needsUpdate = true;
 
     //Slowly rotate waves
     //waves.current.rotation.y = 0.02 * clock.elapsedTime;
   });
 
-  const camera = useThree((state) => state.camera);
-  useEffect(() => {
-    camera.rotation.set(0, 100, 0);
-    camera.updateProjectionMatrix();
-  }, []);
+  // /const camera = useThree((state) => state.camera);
+  // useEffect(() => {
+  //   camera.rotation.set(0, 100, 0);
+  //   camera.updateProjectionMatrix();
+  // }, []);
 
   return (
     <points {...props} ref={waves}>
@@ -140,7 +138,7 @@ export default function App() {
           <PerspectiveCamera
             position={[400, 800, 2000]}
             fov={50}
-            far={12000}
+            far={13000}
             makeDefault
           />
           <OrbitControls

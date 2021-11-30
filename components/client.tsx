@@ -13,15 +13,15 @@ function Client(props) {
     >
       <div
         data-scroll
-        className={`flex-1 ${!flip ? "order-last" : `order-none`}`}
+        className={`flex-1  ${!flip ? "order-last" : `order-none`}`}
       >
         <img src="https://source.unsplash.com/featured?space" alt="" />
       </div>
       <div
         className="flex-1"
         data-scroll
-        data-scroll-sticky
-        data-scroll-target="#myarea"
+        // data-scroll-sticky
+        // data-scroll-target="#myarea"
       >
         <div className="flex justify-center flex-col h-full text-center">
           <div
