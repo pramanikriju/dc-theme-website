@@ -39,7 +39,7 @@ function Self() {
           )}
           <span className="">
             {data?.isPlaying ? (
-              `${data.title} by ${data.artist} `
+              `${data.title} by ${data.artist}`
             ) : (
               <span className="ml-3"> N/A </span>
             )}
