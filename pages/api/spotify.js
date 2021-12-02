@@ -8,6 +8,8 @@ const {
 
 const basic = Buffer.from(`${client_id}:${client_secret}`).toString("base64");
 const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
+const RECENTLY_PLAYED_ENDPOINT =
+  "https://api.spotify.com/v1/me/player/recently-played?limit=1";
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 
 const getAccessToken = async () => {
@@ -36,14 +38,45 @@ export const getNowPlaying = async () => {
   });
 };
 
+export const getRecentlyPlayed = async () => {
+  const { access_token } = await getAccessToken();
+
+  return fetch(RECENTLY_PLAYED_ENDPOINT, {
+    headers: {
+      Authorization: `Bearer ${access_token}`,
+    },
+  });
+};
+
 export default async (_, res) => {
   const response = await getNowPlaying();
 
+  let song;
+
   if (response.status === 204 || response.status > 400) {
-    return res.status(200).json({ isPlaying: false });
+    const recent_response = await getRecentlyPlayed();
+    song = await recent_response.json();
+    //return res.status(200).json(song);
+    const isPlaying = false;
+    song = song.items[0];
+    const title = song.track.name;
+    const artist = song.track.artists.map((_artist) => _artist.name).join(", ");
+    const album = song.track.album.name;
+    const albumImageUrl = song.track.album.images[1].url;
+    const songUrl = song.track.external_urls.spotify;
+
+    return res.status(200).json({
+      album,
+      albumImageUrl,
+      artist,
+      isPlaying,
+      songUrl,
+      title,
+    });
+  } else {
+    song = await response.json();
   }
 
-  const song = await response.json();
   const isPlaying = song.is_playing;
   const title = song.item.name;
   const artist = song.item.artists.map((_artist) => _artist.name).join(", ");
