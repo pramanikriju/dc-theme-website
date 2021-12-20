@@ -1,4 +1,6 @@
 import React from "react";
+import { FaLaravel, FaReact } from "react-icons/fa";
+import { FiServer } from "react-icons/fi";
 
 function WorkHistory(props) {
   return (
@@ -10,27 +12,16 @@ function WorkHistory(props) {
               <div className="h-full w-1 bg-gray-800 pointer-events-none"></div>
             </div>
             <div className="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-blue-500 text-white relative z-10 title-font font-medium text-sm">
-              ◍
+              1
             </div>
             <div className="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
               <div className="flex-shrink-0 w-24 h-24 bg-gray-800 text-blue-400 rounded-full inline-flex items-center justify-center">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  className="w-12 h-12"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                </svg>
+                <FaLaravel className="h-full w-full p-5 text-red-600" />
               </div>
               <div className="flex-grow sm:pl-6 mt-6 sm:mt-0">
                 <h2 className="font-medium title-font text-white mb-1 text-xl">
                   Laravel
                 </h2>
-                <div className="text-muted">Chief Technical Architect</div>
                 <p className="leading-relaxed">
                   VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk
                   bespoke try-hard cliche palo santo offal.
@@ -47,21 +38,11 @@ function WorkHistory(props) {
             </div>
             <div className="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
               <div className="flex-shrink-0 w-24 h-24 bg-gray-800 text-blue-400 rounded-full inline-flex items-center justify-center">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  className="w-12 h-12"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                </svg>
+                <FaReact className="h-full w-full p-5 text-cyan-300" />
               </div>
               <div className="flex-grow sm:pl-6 mt-6 sm:mt-0">
                 <h2 className="font-medium title-font text-white mb-1 text-xl">
-                  The Catalyzer
+                  ReactJS
                 </h2>
                 <p className="leading-relaxed">
                   VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk
@@ -79,22 +60,11 @@ function WorkHistory(props) {
             </div>
             <div className="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
               <div className="flex-shrink-0 w-24 h-24 bg-gray-800 text-blue-400 rounded-full inline-flex items-center justify-center">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  className="w-12 h-12"
-                  viewBox="0 0 24 24"
-                >
-                  <circle cx="12" cy="5" r="3"></circle>
-                  <path d="M12 22V8M5 12H2a10 10 0 0020 0h-3"></path>
-                </svg>
+                <FiServer className="h-full w-full p-7 text-red-300" />
               </div>
               <div className="flex-grow sm:pl-6 mt-6 sm:mt-0">
                 <h2 className="font-medium title-font text-white mb-1 text-xl">
-                  The 400 Blows
+                  Miscellaneous
                 </h2>
                 <p className="leading-relaxed">
                   VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk

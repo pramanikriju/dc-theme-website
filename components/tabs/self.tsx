@@ -15,7 +15,8 @@ function Self() {
 
         <p className="py-2 text-gray-700 dark:text-gray-400">
           Full Stack developer and technology consultant specializing in SaaS
-          startups and quick turnaround times
+          startups. I also curate rich digital experiences, both online and on
+          mobile devices.
         </p>
 
         <div className="flex items-center mt-4 text-gray-700 dark:text-gray-200">

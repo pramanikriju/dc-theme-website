@@ -4,6 +4,7 @@ import profilePic from "../public/assets/img/me.png";
 import Image from "next/image";
 import Self from "./tabs/self";
 import WorkHistory from "./tabs/WorkHistory";
+import Links from "./tabs/links";
 
 const tabsList = ["About", "Tech", "Links"];
 
@@ -48,7 +49,9 @@ function Profile() {
             <Tab.Panel>
               <WorkHistory />
             </Tab.Panel>
-            <Tab.Panel>Content 3</Tab.Panel>
+            <Tab.Panel>
+              <Links />
+            </Tab.Panel>
           </Tab.Panels>
         </Tab.Group>
       </div>
