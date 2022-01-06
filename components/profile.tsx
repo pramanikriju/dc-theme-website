@@ -5,6 +5,7 @@ import Image from "next/image";
 import Self from "./tabs/self";
 import WorkHistory from "./tabs/WorkHistory";
 import Links from "./tabs/links";
+import { motion, AnimatePresence } from "framer-motion";
 
 const tabsList = ["About", "Tech", "Links"];
 
@@ -12,7 +13,7 @@ function Profile() {
   return (
     <>
       <div
-        className="w-64 h-64 rounded-full mx-auto  border-2 border-blue-600 p-1 my-5"
+        className="w-64 h-64 rounded-full mx-auto  border-2 border-blue-600 p-1 my-5 "
         data-scroll
       >
         <Image
@@ -22,7 +23,7 @@ function Profile() {
           layout="responsive"
         />
       </div>
-      <div className="max-w-3xl mx-auto w-full py-6 sm:px-0 bg-blue-600/40 rounded-xl ">
+      <div className="max-w-3xl mx-auto w-full py-6 sm:px-0 bg-blue-600/40 rounded-xl shadow-2xl shadow-blue-600/40 ">
         <Tab.Group>
           <Tab.List className="flex px-5 p-1 space-x-1  rounded-xl border-1">
             {tabsList.map((item, i) => (
@@ -43,15 +44,23 @@ function Profile() {
           </Tab.List>
           <hr className="mx-5 mt-5" />
           <Tab.Panels className="py-2 min-h-full	">
-            <Tab.Panel>
-              <Self />
-            </Tab.Panel>
-            <Tab.Panel>
-              <WorkHistory />
-            </Tab.Panel>
-            <Tab.Panel>
-              <Links />
-            </Tab.Panel>
+            <AnimatePresence>
+              <Tab.Panel>
+                <motion.div
+                  animate={{
+                    y: [10, 0],
+                  }}
+                >
+                  <Self />
+                </motion.div>
+              </Tab.Panel>
+              <Tab.Panel>
+                <WorkHistory />
+              </Tab.Panel>
+              <Tab.Panel>
+                <Links />
+              </Tab.Panel>
+            </AnimatePresence>
           </Tab.Panels>
         </Tab.Group>
       </div>

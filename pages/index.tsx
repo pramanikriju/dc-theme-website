@@ -8,8 +8,8 @@ const Wave = dynamic(() => import("../components/wave"), {
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import { useRouter } from "next/router";
 import clientsData from "../assets/clientData";
-import Client from "../components/client";
 import Profile from "../components/profile";
+import CardWithRoundImage from "../components/cardWithRoundImage";
 
 export default function Home() {
   const containerRef = useRef(null);
@@ -41,7 +41,9 @@ export default function Home() {
               <main className="flex flex-col items-center justify-center  flex-1 text-center mb-46 ">
                 <h1 className="text-5xl md:text-7xl font-bold  z-50">
                   I am{" "}
-                  <span className="text-blue-600 main-font">Riju Pramanik</span>
+                  <span className="text-blue-600 main-font tracking-in-expand">
+                    Riju Pramanik
+                  </span>
                 </h1>
 
                 <p className="mt-3 text-3xl font-bold z-50">
@@ -60,13 +62,13 @@ export default function Home() {
           <div className="flex flex-col min-h-screen " data-scroll-section>
             <Profile />
           </div>
-          {/* {clientsData.map((item, i) => (
-            <Client
-              key={item.id}
-              client={item}
-              flip={i % 2 === 0 ? true : false}
-            />
-          ))} */}
+
+          {/* <div
+            className="grid grid-cols-4 gap-4 min-h-screen"
+            data-scroll-section
+          >
+            Test
+          </div> */}
         </main>
       </LocomotiveScrollProvider>
     </>
