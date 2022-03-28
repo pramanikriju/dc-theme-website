@@ -19,12 +19,12 @@ function WorkHistory(props) {
                 <FaLaravel className="h-full w-full p-5 text-red-600" />
               </div>
               <div className="flex-grow sm:pl-6 mt-6 sm:mt-0">
-                <h2 className="font-medium title-font text-white mb-1 text-xl">
+                <h2 className="font-medium  main-font text-white mb-1 text-xl">
                   Laravel
                 </h2>
                 <p className="leading-relaxed">
-                  VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk
-                  bespoke try-hard cliche palo santo offal.
+                  Full stack PHP framework for constructing everything from
+                  small to enterprise-level applications.
                 </p>
               </div>
             </div>
@@ -41,7 +41,7 @@ function WorkHistory(props) {
                 <FaReact className="h-full w-full p-5 text-cyan-300" />
               </div>
               <div className="flex-grow sm:pl-6 mt-6 sm:mt-0">
-                <h2 className="font-medium title-font text-white mb-1 text-xl">
+                <h2 className="font-medium main-font text-white mb-1 text-xl">
                   ReactJS
                 </h2>
                 <p className="leading-relaxed">
@@ -63,7 +63,7 @@ function WorkHistory(props) {
                 <FiServer className="h-full w-full p-7 text-red-300" />
               </div>
               <div className="flex-grow sm:pl-6 mt-6 sm:mt-0">
-                <h2 className="font-medium title-font text-white mb-1 text-xl">
+                <h2 className="font-medium main-font text-white mb-1 text-xl">
                   Miscellaneous
                 </h2>
                 <p className="leading-relaxed">

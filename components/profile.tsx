@@ -13,17 +13,26 @@ function Profile() {
   return (
     <>
       <div
-        className="w-64 h-64 rounded-full mx-auto  border-2 border-blue-600 p-1 my-5 "
+        className="w-64 h-64 rounded-full mx-auto  border-2 border-blue-600 p-3 my-5 "
         data-scroll
       >
+        {/* <motion.div
+          animate={{
+            scale: [1, 1.1, 1, 1.1, 1],
+            //rotate: [0, 0, 270, 270, 0],
+            //borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+          }}
+          transition={{ repeat: 1, duration: 10 }}
+        > */}
         <Image
           className="rounded-full"
           src={profilePic}
           alt=""
           layout="responsive"
         />
+        {/* </motion.div> */}
       </div>
-      <div className="max-w-3xl mx-auto w-full py-6 sm:px-0 bg-blue-600/40 rounded-xl shadow-2xl shadow-blue-600/40 ">
+      <div className="max-w-3xl mx-auto w-full py-6 sm:px-0 bg-blue-600/60 rounded-xl shadow-2xl shadow-blue-600/40 ">
         <Tab.Group>
           <Tab.List className="flex px-5 p-1 space-x-1  rounded-xl border-1">
             {tabsList.map((item, i) => (
@@ -43,13 +52,14 @@ function Profile() {
             ))}
           </Tab.List>
           <hr className="mx-5 mt-5" />
+
           <Tab.Panels className="py-2 min-h-full	">
-            <AnimatePresence>
+            <motion.div layout>
               <Tab.Panel>
                 <motion.div
-                  animate={{
-                    y: [10, 0],
-                  }}
+                  initial={{ y: 10 }}
+                  whileInView={{ y: 0 }}
+                  viewport={{ once: true }}
                 >
                   <Self />
                 </motion.div>
@@ -60,7 +70,7 @@ function Profile() {
               <Tab.Panel>
                 <Links />
               </Tab.Panel>
-            </AnimatePresence>
+            </motion.div>
           </Tab.Panels>
         </Tab.Group>
       </div>

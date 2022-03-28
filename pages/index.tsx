@@ -10,6 +10,7 @@ import { useRouter } from "next/router";
 import clientsData from "../assets/clientData";
 import Profile from "../components/profile";
 import CardWithRoundImage from "../components/cardWithRoundImage";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const containerRef = useRef(null);
@@ -62,13 +63,6 @@ export default function Home() {
           <div className="flex flex-col min-h-screen " data-scroll-section>
             <Profile />
           </div>
-
-          {/* <div
-            className="grid grid-cols-4 gap-4 min-h-screen"
-            data-scroll-section
-          >
-            Test
-          </div> */}
         </main>
       </LocomotiveScrollProvider>
     </>

@@ -13,7 +13,7 @@ function Self() {
           Riju Pramanik
         </h1>
 
-        <p className="py-2 text-gray-700 dark:text-gray-400">
+        <p className="py-2 text-white">
           Full Stack developer and technology consultant specializing in SaaS
           startups. I also curate rich digital experiences, both online and on
           mobile devices.

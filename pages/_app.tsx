@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import "../styles/locomotive-scroll.min.css";
+import { AnimatePresence } from "framer-motion";
 import { ThemeProvider } from "next-themes";
 import Head from "next/head";
 
@@ -10,7 +11,9 @@ function App({ Component, pageProps }) {
         <title>Riju Pramanik | Web Developer</title>
       </Head>
       <ThemeProvider defaultTheme="dark" attribute="class">
-        <Component {...pageProps} />
+        <AnimatePresence>
+          <Component {...pageProps} />
+        </AnimatePresence>
       </ThemeProvider>
     </>
   );
