@@ -39,7 +39,7 @@ export default function Home() {
             {/* <Sidebar /> */}
 
             <div className="flex  items-center justify-center  py-2 w-full h-full min-h-screen relative">
-              <main className="flex flex-col items-center justify-center  flex-1 text-center mb-46 ">
+              <main className="flex flex-col items-center justify-center  flex-1 text-center ">
                 <h1 className="text-5xl md:text-7xl font-bold  z-50">
                   I am{" "}
                   <span className="text-blue-600 main-font tracking-in-expand">
@@ -62,6 +62,12 @@ export default function Home() {
 
           <div className="flex flex-col min-h-screen " data-scroll-section>
             <Profile />
+          </div>
+          <div
+            className="flex flex-col min-h-screen items-center "
+            data-scroll-section
+          >
+            <h1 className="neonText text-6xl">Testing Neon</h1>
           </div>
         </main>
       </LocomotiveScrollProvider>

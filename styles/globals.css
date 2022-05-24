@@ -10,6 +10,7 @@
   .main-font {
     font-family: "Proza Libre", sans-serif;
   }
+
   .tracking-in-expand {
     -webkit-animation: tracking-in-expand 0.7s
       cubic-bezier(0.215, 0.61, 0.355, 1) both;
@@ -24,7 +25,7 @@
       opacity: 0.6;
     }
     100% {
-      opacity: 1; 
+      opacity: 1;
     }
   }
   @keyframes tracking-in-expand {
@@ -48,4 +49,29 @@ html.has-scroll-smooth {
   right: 0;
   top: 0;
   bottom: 0;
+}
+
+/* Neon Flickering sign */
+
+.neonText {
+  /* animation: flicker 3s infinite alternate; */
+  color: #fff;
+  font-family: "Train One";
+
+  animation: pulsate 0.15s ease-in-out infinite alternate;
+}
+
+/* Neon animation */
+
+@keyframes pulsate {
+  100% {
+    /* Larger blur radius */
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #5271ff,
+      0 0 80px #5271ff, 0 0 90px #5271ff, 0 0 100px #5271ff, 0 0 150px #5271ff;
+  }
+  0% {
+    /* A slightly smaller blur radius */
+    text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px #fff, 0 0 38px #5271ff,
+      0 0 73px #5271ff, 0 0 80px #5271ff, 0 0 94px #5271ff, 0 0 140px #5271ff;
+  }
 }
