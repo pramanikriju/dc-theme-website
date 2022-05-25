@@ -68,7 +68,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.1, @babel/runtime@npm:^7.14.6":
+"@babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.14.6":
   version: 7.16.0
   resolution: "@babel/runtime@npm:7.16.0"
   dependencies:
@@ -419,6 +419,13 @@ __metadata:
   version: 16.11.6
   resolution: "@types/node@npm:16.11.6"
   checksum: 6e19634766ff589d3d2f361c2196b671f8f133cdadc5ad347a621c360d8994b6c4fbccfb2ad9c60c588c593831a96497c9c6b77d2b7e91be723384b94f6368e7
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^17.0.35":
+  version: 17.0.35
+  resolution: "@types/node@npm:17.0.35"
+  checksum: 7a24946ae7fd20267ed92466384f594e448bfb151081158d565cc635d406ecb29ea8fb85fcd2a1f71efccf26fb5bd3c6f509bde56077eb8b832b847a6664bc62
   languageName: node
   linkType: hard
 
@@ -3484,19 +3491,6 @@ next@latest:
   languageName: node
   linkType: hard
 
-"react-reconciler@npm:0.26.1":
-  version: 0.26.1
-  resolution: "react-reconciler@npm:0.26.1"
-  dependencies:
-    loose-envify: ^1.1.0
-    object-assign: ^4.1.1
-    scheduler: ^0.20.1
-  peerDependencies:
-    react: ^17.0.1
-  checksum: 1c18f009d017628a2f5360732d76f75d76fcb33550d7e1e1bf19b4393e24fdd81d99aac0775ec00ec7bbbae5e0829daf47500d95c928e19ec9e63b562beb2420
-  languageName: node
-  linkType: hard
-
 "react-reconciler@npm:^0.26.2":
   version: 0.26.2
   resolution: "react-reconciler@npm:0.26.2"
@@ -3549,28 +3543,7 @@ next@latest:
   languageName: node
   linkType: hard
 
-"react-three-fiber@npm:^5.3.22":
-  version: 5.3.22
-  resolution: "react-three-fiber@npm:5.3.22"
-  dependencies:
-    "@babel/runtime": ^7.12.1
-    react-merge-refs: ^1.1.0
-    react-reconciler: 0.26.1
-    react-use-measure: ^2.0.3
-    resize-observer-polyfill: ^1.5.1
-    scheduler: 0.20.1
-    tiny-emitter: ^2.1.0
-    use-asset: ^1.0.4
-    utility-types: ^3.10.0
-  peerDependencies:
-    react: ">=17.0"
-    react-dom: ">=17.0"
-    three: ">=0.126"
-  checksum: 7f5927a0badcd911bc1359a41843c86e7c91512e01609abbc3e12706c948667478697e9bbac7293d510250e77df29ef22abf13f82bcd8613c65f4d9a58e37984
-  languageName: node
-  linkType: hard
-
-"react-use-measure@npm:^2.0.3, react-use-measure@npm:^2.0.4":
+"react-use-measure@npm:^2.0.4":
   version: 2.0.4
   resolution: "react-use-measure@npm:2.0.4"
   dependencies:
@@ -3744,6 +3717,7 @@ next@latest:
     "@headlessui/react": ^1.4.2
     "@react-three/drei": ^7.20.0
     "@react-three/fiber": ^7.0.17
+    "@types/node": ^17.0.35
     "@types/react": ^17.0.33
     "@types/three": ^0.133.1
     autoprefixer: ^10.4.0
@@ -3757,7 +3731,6 @@ next@latest:
     react-helmet: ^6.1.0
     react-icons: ^4.3.1
     react-locomotive-scroll: ^0.2.0
-    react-three-fiber: ^5.3.22
     swr: ^1.0.1
     tailwindcss: ^3.0.7
     three: ^0.134.0
@@ -3796,17 +3769,7 @@ next@latest:
   languageName: node
   linkType: hard
 
-"scheduler@npm:0.20.1":
-  version: 0.20.1
-  resolution: "scheduler@npm:0.20.1"
-  dependencies:
-    loose-envify: ^1.1.0
-    object-assign: ^4.1.1
-  checksum: ace896fff8ccc516a4b5a249c712fc88d4e2456587d991acc220b54690362d6a2b9d426a7f030454cb439f6f5ff2706b13ee8c44ccb953884c4756304a2f8ad6
-  languageName: node
-  linkType: hard
-
-"scheduler@npm:^0.20.1, scheduler@npm:^0.20.2":
+"scheduler@npm:^0.20.2":
   version: 0.20.2
   resolution: "scheduler@npm:0.20.2"
   dependencies:
@@ -4276,13 +4239,6 @@ next@latest:
   version: 1.2.0
   resolution: "tiny-emitter@npm:1.2.0"
   checksum: f21f76da7c1c7fbc60c4ff32c43db8ef601aa98ffc79b75ab1e2d6308c0695d9aa5bd0c941e3a234d8e49ca994ab574692754d5617bd7d2b48b880857e0e3154
-  languageName: node
-  linkType: hard
-
-"tiny-emitter@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "tiny-emitter@npm:2.1.0"
-  checksum: fbcfb5145751a0e3b109507a828eb6d6d4501352ab7bb33eccef46e22e9d9ad3953158870a6966a59e57ab7c3f9cfac7cab8521db4de6a5e757012f4677df2dd
   languageName: node
   linkType: hard
 
