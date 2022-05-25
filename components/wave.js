@@ -110,7 +110,7 @@ const Map = (props) => {
   );
 };
 
-export default function App() {
+export default function Wave() {
   return (
     <>
       <Helmet>
