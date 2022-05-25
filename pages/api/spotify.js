@@ -48,7 +48,7 @@ export const getRecentlyPlayed = async () => {
   });
 };
 
-export default async (_, res) => {
+let spotify = async (_, res) => {
   const response = await getNowPlaying();
 
   let song;
@@ -93,3 +93,5 @@ export default async (_, res) => {
     title,
   });
 };
+
+export default spotify;

@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Image from "next/image";
 
-// cardWithRoundImage.propTypes = {};
 
 export default function CardWithRoundImage(props: any) {
   return (
     <div>
       <div className="max-w-md px-8 py-4 mx-auto mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-800">
         <div className="flex justify-center -mt-16 md:justify-end">
-          <img
+          <Image
             className="object-cover w-20 h-20 border-2 border-blue-500 rounded-full dark:border-blue-400"
             alt="Testimonial avatar"
             src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=76&q=80"

@@ -10,7 +10,7 @@ import { useTheme } from "next-themes";
 const numParticles = 3500;
 
 const Map = (props) => {
-  const { theme } = useTheme();
+  //const { theme } = useTheme();
 
   const nodes = useRef([]);
   const scale = useRef([]);
@@ -31,7 +31,7 @@ const Map = (props) => {
         positions[i + 1] = 0; // y
         positions[i + 2] = iy * 100 - (50 * 100) / 2; // z
 
-        scales[j] = theme === "light" ? 40 : 30;
+        scales[j] = 30;
 
         i += 3;
         j++;
