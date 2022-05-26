@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "components/wave.js", "components/particlewave.js", "pages/index.tsx"  ],
+, "components/wave.js", "components/particlewave.js", "pages/index.jsx"  ],
   "exclude": [
     "node_modules"
   ]
