@@ -74,7 +74,7 @@ function Self() {
             />
           </svg>
 
-          <h1 className="px-2 text-md">patterson@example.com</h1>
+          <h1 className="px-2 text-md">me@riju.co</h1>
         </div>
       </div>
       <div className="flex mt-3 items-center px-6   bg-gray-900">

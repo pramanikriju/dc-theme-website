@@ -45,8 +45,8 @@ function WorkHistory(props) {
                   ReactJS
                 </h2>
                 <p className="leading-relaxed">
-                  VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk
-                  bespoke try-hard cliche palo santo offal.
+                  Javascript based UI framework, I specialize in NextJS. This
+                  site is made using NextJS.
                 </p>
               </div>
             </div>

@@ -42,7 +42,7 @@ function Profile() {
                     className={
                       selected
                         ? "transition-all   uppercase w-full py-2.5 text-md leading-5 font-medium text-blue-700 rounded-lg focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60 bg-white shadow"
-                        : "transition-all underline uppercase border-1 border-white w-full py-2.5 text-md leading-5 font-medium text-white rounded-lg focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60  hover:bg-white/[0.12] hover:text-white"
+                        : "transition-all  uppercase border-1 border-white w-full py-2.5 text-md leading-5 font-medium text-white rounded-lg focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60  hover:bg-white/[0.12] hover:text-white"
                     }
                   >
                     {item}
