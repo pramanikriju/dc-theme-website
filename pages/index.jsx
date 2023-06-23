@@ -5,16 +5,25 @@ import { FiChevronsDown } from "react-icons/fi";
 const Wave = dynamic(() => import("../components/wave"), {
   ssr: false,
 });
-import { LocomotiveScrollProvider } from "react-locomotive-scroll";
+import {
+  LocomotiveScrollProvider,
+  useLocomotiveScroll,
+} from "react-locomotive-scroll";
 import { useRouter } from "next/router";
 import clientsData from "../assets/clientData";
 import Profile from "../components/profile";
 import CardWithRoundImage from "../components/cardWithRoundImage";
-import { motion } from "framer-motion";
 
 export default function Home() {
   const containerRef = useRef(null);
   const router = useRouter();
+  const locoscroll = useRef(null);
+  const { scroll } = useLocomotiveScroll();
+
+  const scrolldown = () => {
+    console.log(scroll);
+    //scroll.scrollTo(locoscroll);
+  };
 
   return (
     <>
@@ -54,20 +63,22 @@ export default function Home() {
               </main>
               {/* <ParticleWave /> */}
               <Wave />
-              <p className="absolute bottom-12  animate-bounce border-2 border-blue-600 hover:bor rounded-full p-1  bg-white text-black">
+              <p
+                onClick={scrolldown}
+                className="absolute bottom-12  animate-bounce border-2 border-blue-600 hover:bor rounded-full p-1  bg-white text-black"
+              >
                 <FiChevronsDown className="text-4xl my-1" />
               </p>
             </div>
           </div>
 
-          <div className="flex flex-col min-h-screen " data-scroll-section>
-            <Profile />
-          </div>
           <div
-            className="flex flex-col min-h-screen items-center "
+            className="flex flex-col min-h-screen "
             data-scroll-section
+            id="profile-target"
+            ref={locoscroll}
           >
-            <h1 className="neonText text-6xl">Testing Neon</h1>
+            <Profile />
           </div>
         </main>
       </LocomotiveScrollProvider>

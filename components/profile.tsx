@@ -65,10 +65,22 @@ function Profile() {
                 </motion.div>
               </Tab.Panel>
               <Tab.Panel>
-                <WorkHistory />
+                <motion.div
+                  initial={{ y: 10 }}
+                  whileInView={{ y: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <WorkHistory />
+                </motion.div>
               </Tab.Panel>
               <Tab.Panel>
-                <Links />
+                <motion.div
+                  initial={{ y: 10 }}
+                  whileInView={{ y: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <Links />
+                </motion.div>
               </Tab.Panel>
             </motion.div>
           </Tab.Panels>

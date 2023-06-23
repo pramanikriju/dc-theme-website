@@ -18,12 +18,7 @@ const SideBar = () => {
                      "
     >
       <div className="text-center text-lg uppercase"></div>
-      <SideBarIcon icon={<AiFillHome size="28" />} text="Home" />
-      <Divider />
-      <SideBarIcon icon={<BsPlus size="32" />} />
-      <SideBarIcon icon={<BsFillLightningFill size="20" />} />
-      <SideBarIcon icon={<FaPoo size="20" />} />
-      <Divider />
+
       <div
         className="mt-auto mb-3"
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}

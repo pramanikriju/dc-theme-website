@@ -57,7 +57,7 @@ function Self() {
             />
           </svg>
 
-          <h1 className="px-2 text-md">India</h1>
+          <h1 className="px-2 text-md">Spain</h1>
         </div>
 
         <div className="flex items-center mt-4 text-gray-700 dark:text-gray-200">

@@ -6,6 +6,7 @@ import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "../tailwind.config.js";
 import { useTheme } from "next-themes";
+import { isBrowser } from "react-device-detect";
 
 const numParticles = 3500;
 
@@ -144,7 +145,7 @@ export default function Wave() {
           <OrbitControls
             enablePan={false}
             enableZoom={false}
-            enableRotate={true}
+            enableRotate={isBrowser}
             autoRotate={true}
             autoRotateSpeed={0.1}
             enableDamping={true}

@@ -45,7 +45,7 @@ function WorkHistory(props) {
                   ReactJS
                 </h2>
                 <p className="leading-relaxed">
-                  Javascript based UI framework, I specialize in NextJS. This
+                  Javascript based UI framework, I specialize in React, this
                   site is made using NextJS.
                 </p>
               </div>
@@ -64,11 +64,10 @@ function WorkHistory(props) {
               </div>
               <div className="flex-grow sm:pl-6 mt-6 sm:mt-0">
                 <h2 className="font-medium main-font text-white mb-1 text-xl">
-                  Miscellaneous
+                  DevOps
                 </h2>
                 <p className="leading-relaxed">
-                  VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk
-                  bespoke try-hard cliche palo santo offal.
+                  Familiarity with AWS and other cloud infrastructure providers{" "}
                 </p>
               </div>
             </div>
